@@ -179,6 +179,22 @@ INSERT INTO characters VALUES (9, "John Blake");
 INSERT INTO characters VALUES (10, "Selina Kyle");
 
 DELETE FROM credits;
+INSERT INTO credits VALUES(1, 1, 1, 1);
+INSERT INTO credits VALUES(2, 1, 2, 2);
+INSERT INTO credits VALUES(3, 1, 3, 3);
+INSERT INTO credits VALUES(4, 1, 4, 4);
+INSERT INTO credits VALUES(5, 1, 5, 5);
+INSERT INTO credits VALUES(6, 2, 1, 1);
+INSERT INTO credits VALUES(7, 2, 6, 6);
+INSERT INTO credits VALUES(8, 2, 7, 7);
+INSERT INTO credits VALUES(9, 2, 2, 2);
+INSERT INTO credits VALUES(10, 2, 9, 4);
+INSERT INTO credits VALUES(11, 3, 1, 1);
+INSERT INTO credits VALUES(12, 3, 5, 5);
+INSERT INTO credits VALUES(13, 3, 8, 8);
+INSERT INTO credits VALUES(14, 3, 10, 9);
+INSERT INTO credits VALUES(15, 3, 11, 10);
+
 
 
 -- Prints a header for the movies output
@@ -189,6 +205,8 @@ DELETE FROM credits;
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT * FROM movies;
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
@@ -198,3 +216,10 @@ DELETE FROM credits;
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.movie_title, actors.actor_name, characters.character_name 
+FROM credits
+INNER JOIN movies ON movies.id = credits.movie_id
+INNER JOIN actors ON actors.id = credits.actor_id
+INNER JOIN characters ON characters.id = credits.character_id
+;
