@@ -178,6 +178,9 @@ INSERT INTO characters VALUES (8, "Bane");
 INSERT INTO characters VALUES (9, "John Blake");
 INSERT INTO characters VALUES (10, "Selina Kyle");
 
+DELETE FROM credits;
+
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
