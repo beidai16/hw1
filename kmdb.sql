@@ -205,7 +205,8 @@ INSERT INTO credits VALUES(15, 3, 11, 10);
 -- The SQL statement for the movies output
 -- TODO!
 
-SELECT * FROM movies;
+SELECT movies.movie_title, movies.year_released, movies.MPAA_rating, studios.studio_name FROM movies
+INNER JOIN studios ON studios.id = movies.studio_id;
 
 -- Prints a header for the cast output
 .print ""
