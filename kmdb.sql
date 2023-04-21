@@ -140,6 +140,13 @@ CREATE TABLE characters (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+DELETE FROM studios;
+INSERT INTO studios VALUES (1, "Warner Bros");
+
+DELETE FROM movies;
+INSERT INTO movies VALUES (1, 1, "Batman Begins", 2005, "PG-13");
+
+SELECT * FROM movies;
 
 -- Prints a header for the movies output
 .print "Movies"
