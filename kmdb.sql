@@ -132,9 +132,14 @@ CREATE TABLE actors (
 
 CREATE TABLE characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  character_name TEXT
+);
+
+CREATE TABLE credits (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   movie_id INTEGER,
   actor_id INTEGER,
-  character_name TEXT
+  character_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
@@ -145,8 +150,33 @@ INSERT INTO studios VALUES (1, "Warner Bros");
 
 DELETE FROM movies;
 INSERT INTO movies VALUES (1, 1, "Batman Begins", 2005, "PG-13");
+INSERT INTO movies VALUES (2, 1, "The Dark Knight", 2008, "PG-13");
+INSERT INTO movies VALUES (3, 1, "The Dark Knight Rises", 2012, "PG-13");
 
-SELECT * FROM movies;
+DELETE FROM actors;
+INSERT INTO actors VALUES (1, "Christian Bale");
+INSERT INTO actors VALUES (2, "Michael Caine");
+INSERT INTO actors VALUES (3, "Liam Neeson ");
+INSERT INTO actors VALUES (4, "Katie Holmes");
+INSERT INTO actors VALUES (5, "Gary Oldman");
+INSERT INTO actors VALUES (6, "Heath Ledger");
+INSERT INTO actors VALUES (7, "Aaron Eckhart");
+INSERT INTO actors VALUES (8, "Tom Hardy");
+INSERT INTO actors VALUES (9, "Maggie Gyllenhaal");
+INSERT INTO actors VALUES (10, "Joseph Gordon-Levitt");
+INSERT INTO actors VALUES (11, "Anne Hathaway");
+
+DELETE FROM characters;
+INSERT INTO characters VALUES (1, "Bruce Wayne");
+INSERT INTO characters VALUES (2, "Alfred");
+INSERT INTO characters VALUES (3, "Ra's Al Ghul");
+INSERT INTO characters VALUES (4, "Rachel Dawes");
+INSERT INTO characters VALUES (5, "Commissioner Gordon");
+INSERT INTO characters VALUES (6, "Joker");
+INSERT INTO characters VALUES (7, "Harvey Dent");
+INSERT INTO characters VALUES (8, "Bane");
+INSERT INTO characters VALUES (9, "John Blake");
+INSERT INTO characters VALUES (10, "Selina Kyle");
 
 -- Prints a header for the movies output
 .print "Movies"
